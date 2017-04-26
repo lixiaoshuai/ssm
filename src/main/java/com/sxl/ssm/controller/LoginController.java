@@ -16,12 +16,12 @@ import com.sxl.ssm.service.impl.UserServiceImpl;
  * Author:sxl	2017年4月21日
  */
 @Controller
-@RequestMapping("/test") 
+@RequestMapping("/control")
 public class LoginController {
 	@Autowired
 	private UserServiceImpl userService;
 
-@RequestMapping("dologin.do") //url
+@RequestMapping("/dologin.do") //url
 public String dologin(User user, Model model){
 	
 	if(userService.doUserLogin(user)){
