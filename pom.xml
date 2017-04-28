@@ -6,6 +6,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
+
+
+
   <properties>
       <java.version>1.7</java.version>
 
@@ -15,6 +18,8 @@
       <aspectj.version>1.5.4</aspectj.version>
       <slf4j.version>1.7.5</slf4j.version>
       <log4j.version>1.2.17</log4j.version>
+      <mybatis-spring.version>1.2.2</mybatis-spring.version>
+
 
     <junit.version>4.12</junit.version>
   </properties>
@@ -35,6 +40,7 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>${spring.version}</version>
+
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -44,6 +50,16 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
       <version>${spring.version}</version>
     </dependency>
     <dependency>
@@ -77,7 +93,7 @@
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
-      <version>1.1.1</version>
+      <version>${mybatis-spring.version}</version>
     </dependency>
     <dependency>
       <groupId>mysql</groupId>
