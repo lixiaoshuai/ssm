@@ -1,0 +1,29 @@
+[
+  {"menuid":"1","icon":"icon-sys","menuname":"系统管理",
+    "menus":[{"menuname":"菜单管理","icon":"icon-nav","url":"http://www.16sucai.com"},
+      {"menuname":"添加用户","icon":"icon-add","url":"demo.html"},
+      {"menuname":"用户管理","icon":"icon-users","url":"demo2.html"},
+      {"menuname":"角色管理","icon":"icon-role","url":"demo2.html"},
+      {"menuname":"权限设置","icon":"icon-set","url":"demo.html"},
+      {"menuname":"系统日志","icon":"icon-log","url":"demo.html"}
+    ]
+  },{"menuid":"8","icon":"icon-sys","menuname":"员工管理",
+    "menus":[{"menuname":"员工列表","icon":"icon-nav","url":"demo.html"},
+      {"menuname":"视频监控","icon":"icon-nav","url":"demo1.html"}
+    ]
+  },{"menuid":"56","icon":"icon-sys","menuname":"部门管理",
+    "menus":[{"menuname":"添加部门","icon":"icon-nav","url":"demo1.html"},
+      {"menuname":"部门列表","icon":"icon-nav","url":"demo2.html"}
+    ]
+  },{"menuid":"28","icon":"icon-sys","menuname":"财务管理",
+    "menus":[{"menuname":"收支分类","icon":"icon-nav","url":"demo.html"},
+      {"menuname":"报表统计","icon":"icon-nav","url":"demo1.html"},
+      {"menuname":"添加支出","icon":"icon-nav","url":"demo.html"}
+    ]
+  },{"menuid":"39","icon":"icon-sys","menuname":"商城管理",
+    "menus":[{"menuname":"商品分","icon":"icon-nav","url":"/shop/productcatagory.aspx"},
+      {"menuname":"商品列表","icon":"icon-nav","url":"/shop/product.aspx"},
+      {"menuname":"商品订单","icon":"icon-nav","url":"/shop/orders.aspx"}
+    ]
+  }
+]
