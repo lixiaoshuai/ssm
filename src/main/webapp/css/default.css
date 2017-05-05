@@ -21,8 +21,8 @@ a:hover{ color:Red; text-decoration:underline;}
 
 
 
-.icon{padding:2px 9px; background:url(../images/tabicons.png) no-repeat; }
-.icon-sys{ background:url(../images/directory.png) no-repeat;}
+.icon{padding:2px 9px; background:url(../../../images/tabicons.png) no-repeat; }
+.icon-sys{ background:url(../../../images/directory.png) no-repeat;}
 .icon-add{background-position: -19px 0px;}
 .icon-nav{background-position: -100px -18px;}
 .icon-users{background-position: -100px -480px;}

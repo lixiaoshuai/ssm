@@ -7,49 +7,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Complex Layout - jQuery EasyUI Demo</title>
-    <link rel="stylesheet" type="text/css" href="<%=path%>/easyui/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="<%=path%>/easyui/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="<%=path%>/easyui/demo.css">
-    <script type="text/javascript" src="<%=path%>/easyui/jquery.min.js"></script>
-    <script type="text/javascript" src="<%=path%>/easyui/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<%=path%>/plugin/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="<%=path%>/plugin/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="<%=path%>/plugin/css/demo.css">
+    <script type="text/javascript" src="<%=path%>/plugin/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="<%=path%>/plugin/easyui/jquery.easyui.min.js"></script>
+    <style type="text/css">
+        .logo {
+            width:480px;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            font-size:20px;
+            font-weight:bold;
+            float:left;
+            color:#fff;
+        }
+        .logout {
+            float:right;
+            padding:30px 15px 0 0;
+            color:#fff;
+        }
+        a {
+            color:#fff;
+            text-decoration:none;
+        }
+        a:hover {
+            text-decoration:underline;
+        }
+    </style>
 </head>
 <body>
 
-<div class="easyui-layout" style="width:100%;height:600px;">
-
-    <div data-options="region:'west',split:true" title="West" style="width:100px;">
-        <div class="easyui-accordion" data-options="fit:true,border:false">
-            <div title="Title1" style="padding:10px;">
-                content1
-            </div>
-            <div title="Title2" data-options="selected:true" style="padding:10px;">
-                content2
-            </div>
-            <div title="Title3" style="padding:10px">
-                content3
-            </div>
-        </div>
-    </div>
-    <div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
-        <div class="easyui-tabs" data-options="fit:true,border:false,plain:true">
-            <div title="About" data-options="href:'_content.html'" style="padding:10px"></div>
-            <div title="DataGrid" style="padding:5px">
-                <table class="easyui-datagrid"
-                       data-options="url:'datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true">
-                    <thead>
-                    <tr>
-                        <th data-options="field:'itemid'" width="80">Item ID</th>
-                        <th data-options="field:'productid'" width="100">Product ID</th>
-                        <th data-options="field:'listprice',align:'right'" width="80">List Price</th>
-                        <th data-options="field:'unitcost',align:'right'" width="80">Unit Cost</th>
-                        <th data-options="field:'attr1'" width="150">Attribute</th>
-                        <th data-options="field:'status',align:'center'" width="50">Status</th>
-                    </tr>
-                    </thead>
-                </table>
-            </div>
-        </div>
-    </div>
+<script type="text/javascript">
+    $(function() {
+        $("#nav").tree({
+            url: 'tree.json',
+            lines: true,
+            onClick: function (node) {
+                if ($("#nav").tree("isLeaf", node.target)) {
+                    if ($('#tabs').tabs('exists', node.text)) {
+                        $('#tabs').tabs('select', node.text);
+                        refreshTab({tabTitle: node.text, url: node.url});
+                    } else {
+                        var content = "<iframe scrolling='auto' frameborder='0' src='" + node.url + "' style='width:100%;height:100%;'></iframe>";
+                        $('#tabs').tabs('add', {
+                            title: node.text,
+                            closable: true,
+                            content: content,
+                        });
+                    }
+                }
+            }
+        });
+    })
+</script>
+<body class="easyui-layout">
+<div data-options="region:'north',title:'header',split:true,noheader:true" style="height:40px;background:#666;">
+    <div class="logo">管理平台</div>
+    <div align="right" style="color:#fff;font-size:20px">，登录中</div>
 </div>
+<div data-options="region:'west',title:'导航',split:true,iconCls:'icon-world'" style="width:190px;padding:10px;">
+    <ul id="nav"></ul>
+</div>
+<div data-options="region:'center'" style="overflow:hidden;">
+    <div id="tabs"></div>
+</div>
+
 </body>
 </html>
