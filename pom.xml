@@ -3,11 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sxl</groupId>
   <artifactId>ssm</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>war</packaging>
-
-
-
 
   <properties>
       <java.version>1.7</java.version>
@@ -24,6 +21,11 @@
     <junit.version>4.12</junit.version>
   </properties>
   <dependencies>
+    <dependency>
+      <groupId>com.sxl</groupId>
+      <artifactId>common</artifactId>
+      <version>1.0.0</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -146,8 +148,7 @@
       <artifactId>jackson-databind</artifactId>
       <version>${jackson.version}</version>
     </dependency>
-
-  </dependencies>
+</dependencies>
   <build>
     <finalName>ssm</finalName>
     <plugins>
