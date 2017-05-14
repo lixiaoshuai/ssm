@@ -6,12 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common" />
         <module name="ssm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="common" target="1.7" />
+      <module name="common" target="1.5" />
+      <module name="sManage" target="1.7" />
       <module name="ssm" target="1.7" />
+      <module name="ssm (1)" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

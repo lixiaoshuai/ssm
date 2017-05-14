@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" build-on-make="true" name="ssm:war exploded">
-    <output-path>$PROJECT_DIR$/target/ssm</output-path>
+  <artifact type="exploded-war" name="sManage:war exploded">
+    <output-path>$PROJECT_DIR$/../manage/sManage/target/sManage</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="ssm" />
+          <element id="module-output" name="sManage" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="common-1.0.0.jar">
@@ -83,15 +83,19 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.googlecode.ehcache-spring-annotations:ehcache-spring-annotations:1.2.0" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:r09" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.4.5" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.8" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.8" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/ssm/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/../manage/sManage/target/sManage/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="ssm/web/Web" />
+      <element id="javaee-facet-resources" facet="sManage/web/Web" />
     </root>
   </artifact>
 </component>
