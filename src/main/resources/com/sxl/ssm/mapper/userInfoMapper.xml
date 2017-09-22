@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxl.ssm.dao.UserInfoDao">
+
+
+  <resultMap type="com.sxl.ssm.entity.UserInfo" id="userInfo">
+    <id property="id" column="id"/>
+    <id property="username" column="username"/>
+    <id property="password" column="password"/>
+    <id property="phone" column="phone"/>
+    <id property="email" column="email"/>
+    <id property="sex" column="sex"/>
+
+  </resultMap>
+
+  <select id="selectId" resultType ="userInfo" parameterType="java.lang.String" >
+    select   *   from userInfo
+    where username = #{name,jdbcType=VARCHAR}
+
+    ;
+  </select>
+
+  <update id="update" parameterType="userInfo">
+    update userInfo set password = #{userInfo.password} where username = #{userInfo.username};
+  </update>
+
+  <insert id="insert" parameterType="userInfo"  >
+    insert into userInfo(username,password,phone,email)
+    values(
+        #{username},#{password},#{phone},#{email}
+          );
+  </insert>
+
+  <insert id="insertBatch"  parameterType="java.util.List" flushCache="true" >
+    insert into userInfo(username,password,phone,email)
+    <foreach collection="list" item="item" index="index" separator="union all ">
+      select
+      <trim suffixOverrides=",">
+            #{item.username},#{item.password},#{item.phone},#{item.email},
+      </trim>
+      from dual
+    </foreach>
+  </insert>
+
+
+
+  <select id="getAll" resultType="userInfo" parameterType="userInfo">
+
+  </select>
+
+  <select id="selectAll" resultType="userInfo" parameterType="java.util.Map">
+    select id,username,password,sex,phone,email from userInfo  LIMIT  #{page.offset},#{page.pageSize}  ;
+  </select>
+ <select id="count" resultType="java.lang.Integer" >
+    select count(1) from userInfo;
+  </select>
+
+</mapper>

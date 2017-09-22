@@ -16,10 +16,10 @@ Date: 2017-04-21 17:28:07
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for user
+-- Table structure for userInfo
 -- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
+DROP TABLE IF EXISTS `userInfo`;
+CREATE TABLE `userInfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
@@ -27,8 +27,8 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of user
+-- Records of userInfo
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '123', '123');
-INSERT INTO `user` VALUES ('2', 'jiahong', '123');
-INSERT INTO `user` VALUES ('3', 'xiaochang', '123');
+INSERT INTO `userInfo` VALUES ('1', '123', '123');
+INSERT INTO `userInfo` VALUES ('2', 'jiahong', '123');
+INSERT INTO `userInfo` VALUES ('3', 'xiaochang', '123');
